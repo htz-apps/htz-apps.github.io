@@ -57,7 +57,7 @@
       <div class="container nav-inner">
         <a href="../index.html" class="brand"><strong>HTZ APPs</strong></a>
         <nav class="links mono">
-          <a class="btn btn-sm" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Ver en Google Play →</a>
+          <a class="btn btn-sm" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Ver en Google Play ↗</a>
           <button id="dark-toggle" class="dark-toggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
         </nav>
       </div>
@@ -89,7 +89,7 @@
                   href="https://play.google.com/store/apps/details?id=es.htz.apps.smn"
                   target="_blank"
                   rel="noopener"
-                  >Instalar en Google Play →</a
+                  >Instalar en Google Play ↗</a
                 >
                 <button id="share-btn" class="share-btn mono">📤 Compartir</button>
   </div>
@@ -357,7 +357,7 @@
                   <small>Juego de parejas</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="trivial.html"
               ><div class="meta">
                 <img
@@ -369,7 +369,7 @@
                   <small>Juego de preguntas</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="piedra-papel-tijera.html"
               ><div class="meta">
                 <img
@@ -381,7 +381,7 @@
                   <small>Clásico de siempre</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="emojicrush.html"
               ><div class="meta">
                 <img
@@ -393,7 +393,7 @@
                   <small>Juego de bloques</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="mastermind.html"
               ><div class="meta">
                 <img
@@ -405,7 +405,7 @@
                   <small>Juego de colores</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="words.html"
               ><div class="meta">
                 <img
@@ -417,7 +417,7 @@
                   <small>Juego de palabras</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             ><a class="game" href="finder.html"
               ><div class="meta">
                 <img
@@ -429,7 +429,7 @@
                   <small>Juego de letras</small>
                 </div>
               </div>
-              <span class="more mono">Ver ficha →</span></a
+              <span class="more mono">Ver ficha ↗</span></a
             >
           </div>
         </div>
@@ -441,7 +441,7 @@
     <nav class="mono">
       <a href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Google Play</a>
     </nav>
-    <small class="mono">© <span id="year"></span> HTZ APPs · Made with 💙</small>
+    <small class="mono">© <span id="year"></span> HTZ APPs · <span class="foot-version">v1.0.2</span> · Made with 💙</small>
   </div>
 </footer>
     <div class="lightbox" id="lb" hidden>
@@ -507,19 +507,25 @@ document.getElementById('year').textContent = new Date().getFullYear();
   els.forEach(el => io.observe(el));
 })();
 
-// --- share button ---
+// --- share button (solo disponible en dispositivos móviles) ---
 (function(){
   const btn = document.getElementById('share-btn');
   if(!btn) return;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    (navigator.maxTouchPoints > 1 && /Macintosh/i.test(navigator.userAgent));
+  if(!isMobile || !navigator.share){
+    btn.remove();
+    return;
+  }
+  btn.style.display = 'inline-flex';
   btn.addEventListener('click', async () => {
-    const data = { title: document.title, url: location.href };
-    if(navigator.share && navigator.canShare && navigator.canShare(data)){
-      try{ await navigator.share(data); return; }catch(e){}
-    }
-    try{ await navigator.clipboard.writeText(location.href); }catch(e){}
-    btn.textContent = '✓ ¡Enlace copiado!';
-    btn.classList.add('copied');
-    setTimeout(()=>{ btn.textContent = '📤 Compartir'; btn.classList.remove('copied'); }, 2200);
+    try{
+      await navigator.share({
+        title: document.title,
+        text: document.querySelector('meta[name="description"]')?.content || document.title,
+        url: window.location.href
+      });
+    }catch(e){}
   });
 })();
 
