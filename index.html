@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTZ APPs — Juegos clásicos, gratis y sin anuncios</title>
+<meta name="description" content="Juegos clásicos: Memory, Trivial, Simon, Piedra · Papel · Tijera, EmojiCrush, Mastermind, Words y Finder. Gratis, offline y sin anuncios.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="HTZ APPs">
+
+<link rel="canonical" href="https://htzapps.es/">
+<link rel="alternate" hreflang="es" href="https://htzapps.es/">
+<link rel="alternate" hreflang="x-default" href="https://htzapps.es/">
+
+<!-- Open Graph (Twitter/X lo reutiliza si no hay etiquetas twitter:* propias) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://htzapps.es/">
+<meta property="og:title" content="HTZ APPs — Juegos clásicos">
+<meta property="og:description" content="Memory, Trivial, Simon, Piedra · Papel · Tijera, EmojiCrush, Mastermind, Words y Finder. Gratis en Google Play, 100% offline y sin anuncios.">
+<meta property="og:image" content="https://htzapps.es/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HTZ APPs: juegos clásicos">
+<meta property="og:site_name" content="HTZ APPs">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Iconos y tema -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f2f58" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
+
+<!-- Fuentes: solo los pesos que se usan, con display=swap para evitar texto invisible -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body id="arriba">
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#arriba" class="brand"><strong>HTZ APPs</strong></a>
+    <nav class="links mono">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#valores">Filosofía</a>
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-sm" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Ver en Google Play →</a>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge-row mono">
+          <span class="badge badge-gold">100% Offline</span>
+          <span class="badge">Sin Anuncios</span>
+        </div>
+        <h1>HTZ APPs</h1>
+        <p class="lead">Pasatiempos clásicos y modernos adaptados para jugar en cualquier momento y lugar. Sin compras, sin necesidad de conexión a internet y completamente libres de publicidad.</p>
+        <div class="cta">
+          <a class="btn" href="#catalogo">Explorar catálogo ↓</a>
+        </div>
+      </div>
+      <div class="stickers" id="stickers" aria-label="Iconos de los juegos"></div>
+    </div>
+  </section>
+
+  <section class="stats reveal">
+    <div class="container stats-inner">
+      <div><b>Títulos</b><span class="mono">Catálogo</span></div>
+      <div><b>1.000+</b><span class="mono">Descargas totales</span></div>
+      <div><b>100% Offline</b><span class="mono">Sin conexión</span></div>
+      <div><b>PEGI 3+</b><span class="mono">Para todas las edades</span></div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow mono" id="count">Títulos disponibles</p><h2>Elige tu juego</h2></div>
+        <a class="ulink mono" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Perfil en Google Play ↗</a>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo de juego"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="valores" class="section alt reveal">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow mono">Nuestra filosofía</p><h2>Diseñados para disfrutar, no para enganchar</h2></div>
+      </div>
+      <p class="lead">Desarrollamos juegos casuales pensados para desconectar, disfrutar a tu ritmo y respetar tu tiempo.</p>
+      <div class="cards">
+        <article class="card c1 reveal reveal-delay-1">
+          <span class="emoji">🚫</span>
+          <span class="mono">Experiencia total</span>
+          <h3>Sin anuncios invasivos</h3>
+          <p>Olvídate de vídeos forzados entre pantallas o banners que tapan la interfaz. Nuestras partidas son directas, fluidas y sin distracciones.</p>
+        </article>
+        <article class="card c2 reveal reveal-delay-2">
+          <span class="emoji">📶</span>
+          <span class="mono">Totalmente autónomo</span>
+          <h3>100% Sin conexión</h3>
+          <p>En el metro, en el avión o en zonas sin cobertura. Instala el juego y juega cuando quieras sin gastar un solo mega de tu tarifa móvil.</p>
+        </article>
+        <article class="card c3 reveal reveal-delay-3">
+          <span class="emoji">♿</span>
+          <span class="mono">Accesibilidad real</span>
+          <h3>Pensado para todos</h3>
+          <p>Botones amplios, contraste alto, textos legibles y modo oscuro integrado. Diseñados para que cualquier persona, sin importar su edad, disfrute desde el primer segundo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section reveal">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow mono">Desarrollo independiente</p>
+        <h2>Pasión por los clásicos</h2>
+        <p><strong>HTZ APPs</strong> es un proyecto independiente que da nueva vida a los pasatiempos de siempre, adaptados con comodidad a las pantallas táctiles de hoy.</p>
+        <p>Creemos en el software honesto: juegos ligeros que apenas ocupan memoria, cargan al momento y respetan tu privacidad sin pedir permisos innecesarios.</p>
+        <div class="cta" style="margin-top:1.8rem">
+          <a class="btn" href="#catalogo">Ver los títulos</a>
+          <a class="ulink mono" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Perfil del desarrollador ↗</a>
+        </div>
+      </div>
+      <aside class="box">
+        <div class="box-head mono"><b>Ficha del estudio</b><span>Información técnica</span></div>
+        <dl>
+          <div><dt class="mono">Estudio</dt><dd>HTZ APPs</dd></div>
+          <div><dt class="mono">Plataforma</dt><dd>Android (Google Play)</dd></div>
+          <div><dt class="mono">Títulos publicados</dt><dd>8 juegos activos</dd></div>
+          <div><dt class="mono">Compatibilidad</dt><dd>Android 5.0 Lollipop en adelante</dd></div>
+          <div><dt class="mono">Monetización</dt><dd>100% Gratuitos</dd></div>
+          <div><dt class="mono">Seguridad</dt><dd>Sin recopilación de datos</dd></div>
+          <div><dt class="mono">Contacto oficial</dt><dd><a href="mailto:htz.apps.es@gmail.com" class="ulink">htz.apps.es@gmail.com</a></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="faq" class="section alt reveal">
+    <div class="container">
+      <div class="section-head" style="text-align:center;display:block">
+        <p class="eyebrow mono">Resolvemos tus dudas</p>
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-quest">¿Los juegos son realmente 100% gratuitos?</summary>
+          <div class="faq-ans">Sí, todos los títulos de HTZ APPs se descargan gratis desde Google Play. No tienen costes ocultos, muros de pago ni compras dentro de la app (in-app purchases) para desbloquear niveles.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-quest">¿Necesito tener conexión a internet para jugar?</summary>
+          <div class="faq-ans">No, todos nuestros juegos están diseñados con arquitectura 100% offline. Una vez descargada la aplicación, puedes jugar sin wifi ni datos móviles en cualquier momento (viajes, metro, aviones o zonas rurales).</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-quest">¿Qué permisos o datos personales solicitan las aplicaciones?</summary>
+          <div class="faq-ans">Ninguno. Respetamos rigurosamente tu privacidad: las apps no solicitan permisos de cámara, contactos, almacenamiento ni ubicación, y no comparten ni recopilan datos con terceros, cumpliendo el programa Familias de Google Play.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-quest">¿Son aptos para personas mayores o niños?</summary>
+          <div class="faq-ans">¡Totalmente! Todos cuentan con clasificación PEGI 3+ (apto para todas las edades). Ponemos un énfasis especial en la accesibilidad: botones grandes, textos con alto contraste y navegación intuitiva sin menús complejos.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-quest">¿Cómo puedo enviar una sugerencia, reportar un fallo o pedir una nueva función?</summary>
+          <div class="faq-ans">Nos encanta escuchar a nuestros jugadores. Puedes escribirnos directamente a nuestro correo de soporte: <a href="mailto:htz.apps.es@gmail.com" class="ulink">htz.apps.es@gmail.com</a>. Leemos y respondemos todos los mensajes.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact reveal">
+    <div class="container">
+      <p class="eyebrow mono">¿Hablamos?</p>
+      <h2>¿Tienes ideas, sugerencias o quieres proponer un juego?</h2>
+      <p>Nos encanta mejorar cada título y escuchar las experiencias de quienes juegan cada día.</p>
+      <div class="cta center">
+        <a class="btn" href="mailto:htz.apps.es@gmail.com">Escríbenos a htz.apps.es@gmail.com</a>
+        <a class="btn" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener" style="background:#fff;color:var(--ink)">Ver perfil en Google Play ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container foot-inner">
+    <div>
+      <strong>HTZ APPs</strong>
+    </div>
+    <nav class="mono">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#valores">Filosofía</a>
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <small class="mono">© <span id="year"></span> HTZ APPs · Made with 💙</small>
+  </div>
+</footer>
+<script>
+const GAMES = [
+ {
+  "slug": "memory",
+  "name": "Memory",
+  "sub": "Juego de parejas",
+  "cat": "Puzzle",
+  "group": "Memoria y lógica",
+  "tag": "Disfruta del clásico Memory y pon a prueba tu agilidad mental.",
+  "pkg": "es.htz.apps.mmr",
+  "icon": "w3W7sqttvqM63yMWeqkk27lg4IZMUrHsZUCNvADa8hjm4GTWHwHCVqOLhrVlimB5PaKwFT6vpBYujyY0nlJ2iRM",
+  "shots": [
+   "zd_Zck_IyeF_lBviswWkY3PmrtSjay0KaN39Qio5amnddO_6SLC-vE99clAvZSChPg2iKtKZqPAU5P-9fyfhork",
+   "9LP0bHGSBbItE0f3i6Zk8iQ4bH_u_NnMLAR8Uat0XcdRT03TzIS5Ihj3W_HnKexvnZhcUlgoG9K7hb-szMrPM2g",
+   "zGdxNYvUJ-B5HQrEbC-siVZbXrlskpqdZKdgzwg9L4mlPbAUN0aWZyGFYLM3VpaOo-QSfrBH7BEBOBP7r-esQx0",
+   "dSgpwVcsZXLVLS6i-N6aYfpUuXY-x3sjbVF2Qtb2ZvKyPK0b95mT3OrZP3KU3I1GmpdZSE3MDgXHpbueLbJeRw",
+   "zRpBG8Ifq4Lh_1MgWhHYShpRlovEnNT6g5lGHyfwZxNIMb3sjc0_uphNCyRcm1bGnyryMJgcAKO2gQad187ksHA",
+   "AI70qJ6tCc3854mdWMhNNEdPU9KmkKyDrRSDuHt4UAGoTl8zcdNb-AmQLm5zXI5GlNG-sbEzQ1g1jhInqz5EBg",
+   "SStBQvlRK1ttX7kHRg01W0NFlMfMO_ilxjGUCFYNkxRnzneMGdqQR6sK0MCgD_64oAemT8XG_NHv5Qe2S_fhNw",
+   "EperKbY51smu07DfIoT0BtiFnTaAfqeIV3NBP-U-WfvFbbtCPFegVSCeVN8poZC-KyNyUvMT6w2dIyK39Me7sg"
+  ]
+ },
+ {
+  "slug": "trivial",
+  "name": "Trivial",
+  "sub": "Juego de preguntas",
+  "cat": "Puzzle",
+  "group": "Cultura general",
+  "tag": "Disfruta del clásico Trivial y desafía tus conocimientos en partidas rápidas.",
+  "pkg": "es.htz.apps.qzz",
+  "icon": "MlF7uLMhcqztng5dBsTn2curMT3i3RVSWfEydcZrkT7xeJVYcyCp3cY4sUOZ4715oEJy65qvlnd2AZlSY9AESpE",
+  "shots": [
+   "eqhDJy2FbqIp3wKzjztROzPj0fobZufB04saMgPsZl2JRs6fxM5anmtWmzgO-XCwiKDfzdZm8qsSQ41Haeh0",
+   "lAjuJWzDzjm-lZ_MGH5rQ16pibUKzunfqhiMEtO4N5XDfFLqygp_ofMScLuaB3rdM4Q4yMpn2qTdkJqmlueb",
+   "pZa44p2cbpooizTyb5wzi8BUfub90En4sEYic6ZhbBYZALhytG2EF2he_lcde4pKbAaivo7mW7BHwK3VjA0BGg",
+   "I61TvFP--Jny0JTDCdD8Vakr3Slg3uZLTfvwt1f4UZ12SUTEVVji5yymi8vkUimZDGDqL706AESAGjeykKvtffY",
+   "f2gbundPsrszp6plWtGVRjq8yzWSqlZvg65tAINvLsEezP5EDIkDclpvJZVbw8crVKojJLR15--cLmycYLK0SA",
+   "9bsiELnBhr92zydley8HNo3kY5x5L93523rAIw5NjvKClGDtIjysXQusKd7M2AwFR1c1mwzCPVEQ9yhtIrBI9Q",
+   "jgd7qc6IidTv8Jcqz93s03Pg169pbGdx0GLE8VOd2YcyScubSdw-wxJ_j8vA4PakTC_FGcvPEujaE3PeqyZRAw",
+   "JPStu5shwRqYb65OCf-hd_PXEAK-6mOAPfH0GHiNYA4Lx2Q_HJwKsXOfBAeZ7QtxkbUfa8R8CCe9CPQgqKHds_4"
+  ]
+ },
+ {
+  "slug": "simon",
+  "name": "Simon",
+  "sub": "Juego de memoria",
+  "cat": "Puzzle",
+  "group": "Memoria y lógica",
+  "tag": "Disfruta del clásico Simon y pon a prueba tu memoria.",
+  "pkg": "es.htz.apps.smn",
+  "icon": "jEpk-uwvVaWfCE1HvDomNSkk80ZDq5qUl1kZuUZdNlTBgRa0lyR_Q7PCG9DC1QHsaermDf5fhHnHZ2lOU1uKjQ",
+  "shots": [
+   "xxB97xB08uqimFWumR9egdKIHZG_TFGN_LYTG5F3A6GJC5RrVmvft3NG0rk1N2v-LxMs9073HzxaT4h-nlpb8w",
+   "JZE9OZhZgCW-jUKDi6R9qe4V6-71YNUfXwqdk_ZW9gpLkV7KAzF2x5ftYWJEEj7Zfv5a9ViaQxiMvQOcjA-bV1s",
+   "37dwDW3WSqy1gCnuSRDck-skxBkwvHMFlOD6WWfOjGwpPtf7JhEZU1T9Z7OBCYuxJb49oYWfLgKYDuVwxlcy",
+   "SEDlpZiDr4HhsU8it6vUjcc1eaECx6vyAzXbsbEhASLGcj6zUdf07MGzajU1pQoiLYrcl4s5fkCMb7cXNRBH1w",
+   "QS0l0YP3WXiCSeyGbngbqLWNrH7MN6z1srr_rsbiCvdpoAupdCO1r8qzEtfVsuNIWlevpxmijir3kv4S0rzJ",
+   "F27y2sSe5FKxS8RGfnGeSDLTRvCRUXy3dPYLXz65zqpZV1nprvYlTf5panFWzp3uR3_AT7zrjUlWAn-euuo9",
+   "qIAmk5fhBWw1aMD1ZgVXiDL2ErbewAPBkCQik2VcBX3F3ypIeX46epNYYazwPijhzbzCzJxrw0MYmpeQ2qeyFn4",
+   "FOCsiZYQsHAMhy8k6sBYFdgoqGltIma0jAj-shfrD6syv-xASXllHUKfEIvJgnRts4z5GJ_7iP5Wyi_WomjAn_U"
+  ]
+ },
+ {
+  "slug": "piedra-papel-tijera",
+  "name": "Piedra · Papel · Tijera",
+  "sub": "Clásico de siempre",
+  "cat": "Arcade",
+  "group": "Partidas rápidas",
+  "tag": "Disfruta del clásico Piedra · Papel · Tijera y reta a la máquina en partidas rápidas.",
+  "pkg": "es.ionic.rps.starter",
+  "icon": "h7PcEVnBtkAJzA_n1GzZKPTujdei702N7N2Zvh1_oaTrqYqAOhBp9Wqmw3tV_jff5_Dvilcd0ViwD3dqMmyDZQ",
+  "shots": [
+   "G3uEBWfrmufvVKcxujFcEGuVpdSZryWa5bzPXQSABYLGZ3wg2oiBEQxyOtixjLHQrs9i0q3Oo6rP2YspfJnv9aw",
+   "SXzpDepYisWD_vajsRixNBgtZxiXLY0P_a0O6AcRciVPsSAsJYz1guCnT2Pa2ZXbZ1JJphZmxWzRyh547AXt",
+   "8p0ejRXvyeUGEbQEtJh7bWS2XtNbQOwncTfdvHdWHAmS9mQN6xQ08qHIB-Q1VXNaC_bFDOGiVYWHKsBbWlQY",
+   "scnH9PDnQOuZdVTPOZ-E7n2xMSsAPhH7QPvOR3KNutj1fVwk41p5AuHzA_EJ5eD-uuIJ6OUXwqBbeS81KkPPsag",
+   "QoqzWBkleqQCejsa88OvcKuLECAT3VGof7oJrVYhkRu3IeZAhRv3OJheADTFOsEw6UjrGcsRLNepI2jELNdMjA",
+   "Zzfr5GVi_JMGxu4N1vSIOPI-WKWeodc7F6iWIR3eBb5ylNF2ziacwySrRNYandJ9Dhut5p0YDLLKX0Lr7fByzQ",
+   "L9eu53q9KbymrR-rMZ5tOLuTiD8N6W9IxHD6WaQA2EdDtjsx9HmG60LhT3LJRDjLVmAReIOEp9WhdmRNjqvtK5Zk",
+   "9uaRrW1AP3HrU8xzHfATgrfPRbdTFcCHH-ySMz9odfP8SruzNAnKIraPjGsAhmCFw7wQwrYaYYjXdNd20g"
+  ]
+ },
+ {
+  "slug": "emojicrush",
+  "name": "EmojiCrush",
+  "sub": "Juego de bloques",
+  "cat": "Puzzle",
+  "group": "Partidas rápidas",
+  "tag": "Disfruta del clásico EmojiCrush y pon a prueba tu agilidad mental.",
+  "pkg": "es.htz.apps.emc",
+  "icon": "YCREgv7SPFcePHF85tzEPelY1tA16TIF8LMLqFEqfcK6swQVa9a5uhMfD7focXnaipFlDjl88K2MlfoO-RStpZs",
+  "shots": [
+   "71ncGykKmfZOrdHJbsuQMPh6Nf0B9m3P9ASa_j_bUtGSIzgriUwKFGUdfkjuoD2u6vhiRf7kKQ7Pb60xuJvm",
+   "eHjXCEsHo_V3hjNhTJq66DxuRrX2pUjwPn1QaULEuKI9dfXDHU3EZ_ms5TOTxXjnYip7qh9OUYhXE-2DUngxHg",
+   "PQf_68GCo7gk_o3LBowHKBab0lxBRFBkbGUm02QHM7wgXkFgeNVUmsLpxlaBJbJD70qUe3rEKzW4UkIyRKvGkM8",
+   "BL8_0iiyRhtM19bYDupFTPN9IKMCQ-rKe70fCcntL9A7SHckypIiViVH-Gb58NxGv_FERW0ynGYRmn3djPOs_g",
+   "B0ytIcgSX8FAXRiVdUbWPyUSLeImMLZ5-FjGlzYSUG9E3kcX05YGKyZkmVxKgTtXw1BhWciIx1QJe0koYE3t",
+   "DMcmM3UJbe6j6GmK4qdiwiu7phJapXHVGHmZSrCKCfDcY289Wpi5GlSPLFNwvTCLPiHvn4jY8K1KoD39QAJtng",
+   "vg3fsMJKhVgf7vP4yCtwuci-rtYRinNVJwi2jG7wRdNy3e7y9aTXhHQe_-uOlBJolovHVWb5UtlN6BzqHLTgMFjqnU",
+   "3Xw1PLbOH4m-qK1e2sqpFA6l5lbUoa4N99p5NFobc1cBcsqWjEVl4H5jHNLT0kprTbDHArqsN055AQCo8VGOEQ"
+  ]
+ },
+ {
+  "slug": "mastermind",
+  "name": "Mastermind",
+  "sub": "Juego de colores",
+  "cat": "Puzzle",
+  "group": "Memoria y lógica",
+  "tag": "Disfruta del clásico Mastermind y pon a prueba tu mente.",
+  "pkg": "es.htz.apps.mst",
+  "icon": "5_28obxgT3ppA6-r-KIOGMOXI9Vc1l3l69gmvdiO2eRZJShQ-u1FPJEXho5FfJ09GeBGytPcx1-RQ98oasiuZw",
+  "shots": [
+   "Pp6oJfhFs5ZcbyQ311pa_jzt1sCe7OuYGlVAJNRQG2KMMN4q9bJdzJnluMFetfh7XKdpqANP1l6vmVeXEYMYQQ",
+   "1cMlN_j723EjgRJBfbkpG8_L62dtXxaqFBySTNGT7CIcPonlSEtK6TneQcVLb2BZloUIUj-EQXYBytyibmj0bw",
+   "bSjr6jInEYYOE6Gpq148UI7GppFLIqe8F4o_P2I5vPYMbClDNOnG6BejJEICejexBg4qzQ5PG2knRa3K87yFXQ",
+   "BNoDZyVG8h5aIFAa_AFvVjeJ6lJLs1Lz39E5ecA02oc6wTQko3f3azz4wlvF1eShhD8CZKZnsqE1zbUcH_iTg",
+   "WX4EDG6rF8MoiWPrX8E3mfyMtKAnE33LZL7rdd5CHg3lK8nx6nhkETLG4WuFcc-gjg-GIEob5zEmyi_I737JPQ",
+   "wAK-3CloYBdArlWHGyPmwzi7MFWz-SI1EK2OSQA8qJ7kPKvtyWXD3FF5S9XIPTdoEEPT4mJYer_rWvFuMwqv6w",
+   "LHa4LQENX13CDUxWAp-VjyMlBw72D7uOkt7ZyXHg005Mga-o-CDOf3RfmXvdaVodAc7RuyEMwz_Omo0uJULE",
+   "pa7xTyG2NOSJPjWtvWKR6WLqXquhvOHAk9tbprAAUx6OnAYyFqeKkE1rrjRZQLzQaL6hCt3h_EZoFP7TSc4H8cQ"
+  ]
+ },
+ {
+  "slug": "words",
+  "name": "Words",
+  "sub": "Juego de palabras",
+  "cat": "Puzzle",
+  "group": "Palabras",
+  "tag": "Disfruta del clásico Words y pon a prueba tu vocabulario.",
+  "pkg": "es.htz.apps.wod",
+  "icon": "--_7K474or0NI3U9qJBuKGhnVaPV2qpgF87aSPE6vwxqggZCRzofqkCi7ZGbOxdYU73B_jyhdcfyqiNTf6jG",
+  "shots": [
+   "OSGiDY2ADmko6sE311PyN6WQ_AlwPCqS7Stcpu0HRaRSEYGhrK9eX8TOGBnhbJK8fBwkFbm_fFIptqgQ8AmnaLI",
+   "58msRDQzOBTduGU-xMxshe_RPMuNJMcD09BT7JVFBNWIOs2YysSN3pA5l4Pfwe6mY0Qmr-3mAHK7_9HR1hZi",
+   "PbYhABeyYB4DLvMvALbiPJum57vq2B9LxQVWQqcw2Gs3geapqsSp21akP_3B71o7WA7Scqg49J2leXkSiw4xtA",
+   "NFD7x2TT2XQXorLXr1bB2fuFIddUMGGJGJB3b5LNGiWlNDOxWp-oXQYxIZQnBJyUQokcyR-bQj4k4_KgocYZ-Q",
+   "S9DJ1cvvD1gjQ_M4pBM4Z5oVtdXlZiSqgnqFq1cjiVE2iKTCGxXjVlzOItBo0cTqGKxtgQd2tTE8LQ1PUZ-ucA",
+   "4NilegjYcRGD_SJn7shFNvriPWWwrYrSoxCuaqjxEARfT95J1_QPs1vKv3igQ0gNYh_WLP9RdrwNL67DPAFxEA",
+   "9iHs-c_BBLQxxqQV23uYK-eJwWtT8C-7KGipYpBRE0bprikzF7HATkGwdjZy2MKugzo9bgkX1CA70ijPqjwtTw",
+   "0ivlufezF8TsSggQDJ0UtzEsJPk3pSP-2NvgwxQVqzrXUdPuGuX4Xte_c8OF4xIbmM2lufhu-UCh_nN7FGJA"
+  ]
+ },
+ {
+  "slug": "finder",
+  "name": "Finder",
+  "sub": "Juego de letras",
+  "cat": "Puzzle",
+  "group": "Palabras",
+  "tag": "Disfruta del clásico Finder y pon a prueba tu capacidad de búsqueda.",
+  "pkg": "es.htz.apps.fdr",
+  "icon": "LJxtdXqq29lXkc7Ey8no7vLqGgvpWZ_sn2aKFiBdXhiKYV3eUs93dJduAOcMhrH58JTWLr4FpLqmWTffWS1e6w",
+  "shots": [
+   "TgvM4dZYy6SNfU6yE5l3pNwaZAC2Mk7hweEYBo4gHOsuJLHA0MVI4eDPPppAxdJ2eIdsOsZY9hjLDSe8yccNrA",
+   "TqJZ_NJlVQHl4Qs4HQA2EtDMrLwPNcJTDM1n18cqjOIRVVY81WTy4gbnfGuOzp30RDSi711I3zZQrSoX0ISUwXM",
+   "6Aj7ZzTkgdVp0JY_ghl-oiHt3gk9Z6R2Bpn4KfGLr1m4lLfXK81uvKm6rIIIYLp3j2PDxVXxfNBCWbhAU9tLSQ",
+   "pVZ0-XFYvVcBckGSdwcDvDwrZH9OzcUuETFTA-kz8o2yBz0uuvZfXhb1IVqbe2hs9zTBWBctZnQCv2zoK5Lbw",
+   "DT0adyl3notvROQd_xDuHKK1dxxCrFWaByTeJp_LBddHZKF4AeOHCDKQjY__EBnZmy6XXJ1CwX3DxoTEV2cgVA",
+   "FjC2DZdHz7TYWxmoEp-qfA-TQgm6mruDAc6xxx2MfwqBjz--3RWFAYRU7W5kwwmVZrIe117dlu8fLn4MrSsGew"
+  ]
+ }
+];
+
+const PLAY = "https://play.google.com/store/apps/developer?id=HTZ+APPs";
+const CDN = "https://play-lh.googleusercontent.com/";
+const $ = s => document.querySelector(s);
+const icon = (g, s) => `${CDN}${g.icon}=s${s}-rw`;
+const shot = (g, i) => `${CDN}${g.shots[i]}=w526-h296`;
+const href = g => `juegos/${g.slug}.html`;
+
+// ---- hero: pegatinas con los iconos ----
+$("#stickers").innerHTML = GAMES.map(g => `
+  <a class="sticker" href="${href(g)}" title="${g.name}"><img src="${icon(g, 256)}" alt="${g.name}"></a>`).join("")
+  + `<a class="sticker sticker-more mono" href="${PLAY}" target="_blank" rel="noopener">Google<br>Play ↗</a>`;
+
+// ---- catálogo ----
+$("#grid").innerHTML = GAMES.map(g => `
+  <article class="game pcard" data-group="${g.group}">
+    <a class="pc-main" href="${href(g)}">
+      <div class="shot"><img src="${icon(g, 512)}" alt="Icono de ${g.name}" loading="lazy"></div>
+      <div class="tags mono"><span>${g.group}</span><span>${g.cat}</span><span>3+</span></div>
+      <div class="meta"><div><h3>${g.name}</h3><small>${g.sub}</small></div></div>
+      <p class="blurb">${g.tag}</p>
+    </a>
+    <div class="plinks mono"><a href="${href(g)}">Ver ficha →</a><a href="https://play.google.com/store/apps/details?id=${g.pkg}" target="_blank" rel="noopener">Google Play ↗</a></div>
+  </article>`).join("") + `
+  <a class="game pcard cta-card" data-group="todos" href="${PLAY}" target="_blank" rel="noopener">
+    <span class="mono">Todos en</span><strong>Google Play ↗</strong>
+  </a>`;
+
+// ---- filtros ----
+const groups = ["Todos", ...new Set(GAMES.map(g => g.group))];
+$("#chips").innerHTML = groups.map((n, i) => `<button class="chip mono" type="button" aria-pressed="${i === 0}">${n}</button>`).join("");
+$("#chips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+  const f = b.textContent; let n = 0;
+  document.querySelectorAll(".pcard").forEach(c => {
+    const show = f === "Todos" || c.dataset.group === f;
+    c.classList.toggle("is-hidden", !show);
+    if (show && c.dataset.group !== "todos") n++;
+  });
+  $("#count").textContent = f === "Todos" ? "Títulos disponibles" : `Mostrando ${n} de ${GAMES.length} juegos`;
+});
+$("#year").textContent = new Date().getFullYear();
+</script>
+<script>
+
+// --- dark mode ---
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('dark-toggle');
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const apply = t => {
+    root.setAttribute('data-theme', t);
+    if(btn) btn.textContent = t==='dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', t);
+  };
+  apply(saved || (prefersDark ? 'dark' : 'light'));
+  if(btn) btn.addEventListener('click', () => {
+    apply(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+  });
+})();
+
+// --- sticky nav blur ---
+(function(){
+  const nav = document.querySelector('.nav');
+  if(!nav) return;
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// --- scroll reveal ---
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:0.08});
+  els.forEach(el => io.observe(el));
+})();
+
+// --- share button ---
+(function(){
+  const btn = document.getElementById('share-btn');
+  if(!btn) return;
+  btn.addEventListener('click', async () => {
+    const data = { title: document.title, url: location.href };
+    if(navigator.share && navigator.canShare && navigator.canShare(data)){
+      try{ await navigator.share(data); return; }catch(e){}
+    }
+    try{ await navigator.clipboard.writeText(location.href); }catch(e){}
+    btn.textContent = '✓ ¡Enlace copiado!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = '📤 Compartir'; btn.classList.remove('copied'); }, 2200);
+  });
+})();
+
+</script>
+</body>
+</html>

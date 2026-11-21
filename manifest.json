@@ -1,0 +1,22 @@
+{
+  "name": "HTZ APPs",
+  "short_name": "HTZ APPs",
+  "description": "Juegos clásicos: Memory, Trivial, Simon, Piedra · Papel · Tijera, EmojiCrush, Mastermind, Words y Finder. Gratis, offline y sin anuncios.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf9f5",
+  "theme_color": "#1f2f58",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
