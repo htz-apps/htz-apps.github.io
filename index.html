@@ -68,6 +68,9 @@
         <p class="lead">Pasatiempos clásicos y modernos adaptados para jugar en cualquier momento y lugar. Sin compras, sin necesidad de conexión a internet y completamente libres de publicidad.</p>
         <div class="cta">
           <a class="btn" href="#catalogo">Explorar catálogo ↓</a>
+          <button class="btn btn-surprise" type="button" title="Elige un juego al azar">
+            <span class="dice-icon">🎲</span> Sorpréndeme
+          </button>
         </div>
       </div>
       <div class="stickers" id="stickers" aria-label="Iconos de los juegos"></div>
@@ -76,7 +79,7 @@
 
   <section class="stats reveal">
     <div class="container stats-inner">
-      <div><b>Títulos</b><span class="mono">Catálogo</span></div>
+      <div><b>8 Títulos</b><span class="mono">Publicados</span></div>
       <div><b>1.000+</b><span class="mono">Descargas totales</span></div>
       <div><b>100% Offline</b><span class="mono">Sin conexión</span></div>
       <div><b>PEGI 3+</b><span class="mono">Para todas las edades</span></div>
@@ -87,7 +90,12 @@
     <div class="container">
       <div class="section-head">
         <div><p class="eyebrow mono" id="count">Títulos disponibles</p><h2>Elige tu juego</h2></div>
-        <a class="ulink mono" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Perfil en Google Play ↗</a>
+        <div class="cat-actions">
+          <button class="btn btn-sm btn-surprise" type="button" title="Elige un juego al azar">
+            <span class="dice-icon">🎲</span> Sorpréndeme
+          </button>
+          <a class="ulink mono" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Perfil en Google Play ↗</a>
+        </div>
       </div>
       <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo de juego"></div>
       <div class="grid" id="grid"></div>
@@ -119,6 +127,71 @@
           <h3>Pensado para todos</h3>
           <p>Botones amplios, contraste alto, textos legibles y modo oscuro integrado. Diseñados para que cualquier persona, sin importar su edad, disfrute desde el primer segundo.</p>
         </article>
+      </div>
+
+      <div class="receipt-showcase reveal">
+        <div class="receipt-info">
+          <p class="eyebrow mono">Transparencia radical</p>
+          <h3>El "recibo" de lo que no te cobramos</h3>
+          <p>En el mundo de los juegos móviles abundan las compras sorpresa, la publicidad invasiva y rastreo silencioso de tu actividad.</p>
+          <p>Apostamos por un modelo transparente, honesto y directo. Este es tu ticket oficial cada vez que juegas a cualquiera de nuestros juegos:</p>
+          <ul class="receipt-perks mono">
+            <li><span>✓</span> 100% Juegos completos sin microtransacciones</li>
+            <li><span>✓</span> Cero publicidad que interrumpa tus partidas</li>
+            <li><span>✓</span> Sin recopilación de datos ni permisos abusivos</li>
+          </ul>
+        </div>
+
+        <div class="receipt" role="region" aria-label="Recibo de lo que no te cobramos">
+          <div class="receipt-head">
+            <span class="mono receipt-title">*** TICKET DE COMPRA ***</span>
+            <strong class="receipt-logo">HTZ APPs</strong>
+            <span class="mono receipt-sub">SOFTWARE HONESTO</span>
+          </div>
+
+          <div class="receipt-divider-dash"></div>
+
+          <div class="receipt-lines">
+            <div class="receipt-row">
+              <span class="receipt-item">Anuncios</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-val">0,00 €</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-item">Compras en aplicación</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-val">0,00 €</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-item">Datos personales</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-val">0 bytes</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-item">Permisos</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-val">0</span>
+            </div>
+          </div>
+
+          <div class="receipt-divider-solid"></div>
+
+          <div class="receipt-row receipt-total">
+            <strong>TOTAL A PAGAR</strong>
+            <span class="receipt-dots"></span>
+            <strong>0,00 €</strong>
+          </div>
+
+          <div class="receipt-stamp mono">PAGADO · 0,00 €</div>
+
+          <div class="receipt-foot">
+            <div class="receipt-barcode" aria-hidden="true"></div>
+            <span class="mono receipt-thanks">*** GRACIAS POR JUGAR ***</span>
+            <small class="mono">CONSERVE SU TIEMPO Y PRIVACIDAD</small>
+          </div>
+
+          <div class="receipt-sawtooth" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -205,7 +278,7 @@
       <a href="#sobre">Sobre nosotros</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <small class="mono">© <span id="year"></span> HTZ APPs · <span class="foot-version">v1.0.2</span> · Made with 💙</small>
+    <small class="mono">© <span id="year"></span> HTZ APPs · <span class="foot-version">v1.0.3</span> · Made with 💙</small>
   </div>
 </footer>
 <script>
@@ -470,6 +543,48 @@ $("#year").textContent = new Date().getFullYear();
         url: window.location.href
       });
     }catch(e){}
+  });
+})();
+
+// --- Botón Sorpréndeme: dado que elige un juego al azar ---
+(function(){
+  const surpriseBtns = document.querySelectorAll('.btn-surprise');
+  if(!surpriseBtns.length) return;
+
+  const diceFaces = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅', '🎲'];
+
+  function rollDice(btn) {
+    if(btn.classList.contains('rolling')) return;
+    btn.classList.add('rolling');
+
+    const diceIcon = btn.querySelector('.dice-icon');
+    const chosen = GAMES[Math.floor(Math.random() * GAMES.length)];
+
+    let ticks = 0;
+    const interval = setInterval(() => {
+      ticks++;
+      const face = diceFaces[Math.floor(Math.random() * diceFaces.length)];
+      if(diceIcon) diceIcon.textContent = face;
+
+      if(ticks >= 8) {
+        clearInterval(interval);
+        btn.innerHTML = `<span class="dice-icon">🎲</span> ¡${chosen.name}! →`;
+        setTimeout(() => {
+          window.location.href = `juegos/${chosen.slug}.html`;
+        }, 380);
+      }
+    }, 65);
+  }
+
+  surpriseBtns.forEach(btn => {
+    btn.addEventListener('click', () => rollDice(btn));
+  });
+
+  window.addEventListener('pageshow', () => {
+    surpriseBtns.forEach(btn => {
+      btn.classList.remove('rolling');
+      btn.innerHTML = '<span class="dice-icon">🎲</span> Sorpréndeme';
+    });
   });
 })();
 
