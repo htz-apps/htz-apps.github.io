@@ -1,4 +1,4 @@
-:root{--bg:#faf9f5;--ink:#14161f;--navy:#1f2f58;--gold:#F3C82B;--gray:#f0efea;--muted:#4a4f5e;--teal:#14717a;--green:#00BBA7;--sh:4px 4px 0 var(--ink)}
+:root{--bg:#faf9f5;--ink:#14161f;--navy:#1f2f58;--gold:#e1b927;--gray:#f0efea;--muted:#4a4f5e;--teal:#144e7a;--green:#00BBA7;--sh:4px 4px 0 var(--ink)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:clip}
 body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:clip;overflow-wrap:break-word}
@@ -460,7 +460,7 @@ button{font-family:inherit}
   /* Marca — ajustados para oscuro */
   --navy: #2c3e78;   /* botones primarios: fondo */
   --accent:#5d9cf5;  /* links, chips activos, highlights */
-  --gold: #F3C82B;   /* dorado — más luminoso que el claro para igual percepción */
+  --gold: #c3a022;   /* dorado — más luminoso que el claro para igual percepción */
   --teal: #00B8DB;
   --green:#00BBA7;
 
