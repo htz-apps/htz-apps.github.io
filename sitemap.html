@@ -73,9 +73,9 @@
           </div>
 
           <div class="tree-filter-chips" role="group" aria-label="Filtrar por sección">
-            <button class="chip mono" data-filter="all" aria-pressed="true">Todas (11)</button>
+            <button class="chip mono" data-filter="all" aria-pressed="true">Todas (12)</button>
             <button class="chip mono" data-filter="games" aria-pressed="false">Juegos (8)</button>
-            <button class="chip mono" data-filter="main" aria-pressed="false">Páginas (3)</button>
+            <button class="chip mono" data-filter="main" aria-pressed="false">Páginas (4)</button>
           </div>
         </div>
       </div>
@@ -153,6 +153,25 @@
                   </div>
                 </div>
                 <span class="btn btn-sm tree-card-btn">Visitar ↗</span>
+              </a>
+            </li>
+            <li class="tree-item" data-type="main" data-title="Registro de cambios Changelog Historial de versiones actualizaciones">
+              <a href="changelog.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon">📋</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Registro de cambios (Changelog)</strong>
+                      <span class="tree-card-path mono">/changelog.html</span>
+                    </div>
+                    <div class="tree-card-sub">Histórico cronológico de versiones, nuevas funciones, mejoras y correcciones de la web.</div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.7</span>
+                      <span class="tree-tag">weekly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver registro ↗</span>
               </a>
             </li>
           </ul>
@@ -343,6 +362,7 @@
 ├── <span class="t-file">sitemap.xml</span> <span class="t-meta">[1.0 · XML Sitemap Protocol]</span>
 ├── <span class="t-file">index.html</span> <span class="t-meta">[1.0 · weekly]</span> <span class="t-sub">(Inicio / Catálogo / Filosofía / FAQ)</span>
 ├── <span class="t-file">sitemap.html</span> <span class="t-meta">[0.7 · weekly]</span> <span class="t-sub">(Mapa web interactivo)</span>
+├── <span class="t-file">changelog.html</span> <span class="t-meta">[0.7 · weekly]</span> <span class="t-sub">(Historial de cambios y versiones)</span>
 ├── <span class="t-file">404.html</span> <span class="t-meta">[Manejador de páginas no encontradas]</span>
 └── <span class="t-dir">juegos/
     ├── <span class="t-file">memory.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🃏 Memory (Juego de parejas)</span>
@@ -364,8 +384,9 @@
     <nav class="mono">
       <a href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Google Play ↗</a>
       <a href="sitemap.html">Mapa web</a>
+      <a href="changelog.html">Registro de cambios</a>
     </nav>
-    <small class="mono">© <span id="year"></span> HTZ APPs · <span class="foot-version">v1.0.4</span> · Made with 💙</small>
+    <small class="mono">© <span id="year"></span> HTZ APPs · <a href="changelog.html" class="foot-version" title="Ver registro de cambios">v1.1.0</a> · Made with 💙</small>
   </div>
 </footer>
 
@@ -374,6 +395,7 @@
 let parsedUrls = [
   { loc: "https://htz-apps.github.io/", changefreq: "weekly", priority: "1.0" },
   { loc: "https://htz-apps.github.io/sitemap.html", changefreq: "weekly", priority: "0.7" },
+  { loc: "https://htz-apps.github.io/changelog.html", changefreq: "weekly", priority: "0.7" },
   { loc: "https://htz-apps.github.io/juegos/memory.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://htz-apps.github.io/juegos/trivial.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://htz-apps.github.io/juegos/simon.html", changefreq: "monthly", priority: "0.8" },

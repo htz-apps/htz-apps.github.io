@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de cambios (Changelog) — HTZ APPs</title>
+    <meta
+      name="description"
+      content="Histórico completo de versiones, lanzamientos, mejoras de accesibilidad, nuevas funciones interactivas y correcciones en la web de HTZ APPs."
+    />
+    <link rel="canonical" href="https://htz-apps.github.io/changelog.html" />
+    <link
+      rel="alternate"
+      hreflang="es"
+      href="https://htz-apps.github.io/changelog.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://htz-apps.github.io/changelog.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://htz-apps.github.io/changelog.html"
+    />
+    <meta
+      property="og:title"
+      content="Registro de cambios (Changelog) — HTZ APPs"
+    />
+    <meta
+      property="og:description"
+      content="Histórico detallado de versiones, nuevas funciones, mejoras y correcciones realizadas en la web y catálogo de HTZ APPs."
+    />
+    <meta
+      property="og:image"
+      content="https://htz-apps.github.io/og-home.png"
+    />
+    <meta property="og:site_name" content="HTZ APPs" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Iconos y tema -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#1f2f58"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f1117"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="arriba">
+    <!-- Navegación Sticky -->
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand"><strong>HTZ APPs</strong></a>
+        <nav class="links mono">
+          <a href="index.html#catalogo ">Catálogo</a>
+          <a href="index.html#valores ">Filosofía</a>
+          <a href="index.html#sobre ">Sobre nosotros</a>
+          <a href="index.html#faq ">FAQ</a>
+          <a
+            class="btn btn-sm"
+            href="https://play.google.com/store/apps/developer?id=HTZ+APPs"
+            target="_blank"
+            rel="noopener"
+            >Google Play ↗</a
+          >
+          <button
+            id="dark-toggle"
+            class="dark-toggle"
+            aria-label="Cambiar tema"
+            title="Cambiar tema"
+          >
+            🌙
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Cabecera del Changelog -->
+      <section class="changelog-header">
+        <div class="container">
+          <p class="crumbs mono">
+            <a href="index.html">Inicio</a> / Registro de cambios
+          </p>
+          <p class="eyebrow mono">HISTÓRICO Y REGISTRO DE VERSIONES</p>
+          <h1>Registro de cambios</h1>
+          <p class="lead">
+            Evolución cronológica, mejoras, nuevas funciones y correcciones
+            implementadas en el portal web y catálogo de
+            <strong>HTZ APPs</strong>.
+          </p>
+
+          <!-- Métricas / Resumen rápido -->
+          <div class="changelog-stats mono">
+            <span class="badge badge-gold">🚀 Versión actual: v1.1.0</span>
+            <span class="badge">📅 Último despliegue: 22 Nov 2026</span>
+          </div>
+
+          <div class="changelog-actions">
+            <button
+              id="btn-copy-changelog"
+              class="btn btn-sm"
+              style="background: #fff; color: var(--ink)"
+              type="button"
+            >
+              📋 Copiar resumen (Markdown)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Barra de filtros y herramientas -->
+      <section class="section" style="padding-top: 2rem">
+        <div class="container">
+          <div class="changelog-toolbar">
+            <div class="changelog-controls">
+              <!-- Buscador en tiempo real -->
+              <div class="changelog-search-wrap">
+                <span class="changelog-search-icon" aria-hidden="true">🔍</span>
+                <input
+                  type="search"
+                  id="changelog-search"
+                  class="changelog-search"
+                  placeholder="Buscar cambio (ej. dark mode, sitemap, recibo, móvil...)"
+                  aria-label="Filtrar cambios por palabra clave"
+                />
+              </div>
+
+              <!-- Chips de filtro de tipo -->
+              <div
+                class="changelog-filters"
+                role="group"
+                aria-label="Filtrar por tipo de cambio"
+              >
+                <button class="chip mono" data-filter="all" aria-pressed="true">
+                  Todos (6)
+                </button>
+                <button
+                  class="chip mono"
+                  data-filter="feat"
+                  aria-pressed="false"
+                >
+                  ✨ Funciones
+                </button>
+                <button class="chip mono" data-filter="ui" aria-pressed="false">
+                  🎨 Diseño & UI
+                </button>
+                <button
+                  class="chip mono"
+                  data-filter="fix"
+                  aria-pressed="false"
+                >
+                  🐛 Correcciones
+                </button>
+                <button
+                  class="chip mono"
+                  data-filter="a11y"
+                  aria-pressed="false"
+                >
+                  ♿ Accesibilidad
+                </button>
+                <button
+                  class="chip mono"
+                  data-filter="mobile"
+                  aria-pressed="false"
+                >
+                  📱 Móvil
+                </button>
+              </div>
+            </div>
+
+            <!-- Salto rápido a versión -->
+            <div class="changelog-jumps mono">
+              <span>Versiones:</span>
+              <a href="#v1.1.0">v1.1.0</a>
+              <a href="#v1.0.4">v1.0.4</a>
+              <a href="#v1.0.3">v1.0.3</a>
+              <a href="#v1.0.2">v1.0.2</a>
+              <a href="#v1.0.1">v1.0.1</a>
+              <a href="#v1.0.0">v1.0.0</a>
+            </div>
+          </div>
+
+          <!-- Timeline de Versiones -->
+          <div class="changelog-timeline" id="changelog-timeline">
+            <!-- ================= v1.1.0 ================= -->
+            <article
+              class="changelog-version is-latest"
+              id="v1.1.0"
+              data-version="1.1.0"
+            >
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.1.0</span>
+                  <span class="changelog-vbadge mono">ÚLTIMA VERSIÓN</span>
+                  <span class="changelog-date mono"
+                    >📅 22 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Sitemap interactivo · Changelog · Dark Mode WCAG
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Lanzamiento del mapa del sitio interactivo con vistas duales
+                (árbol visual y consola ASCII), nuevo portal de historial de
+                cambios y auditoría de accesibilidad en modo oscuro.
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Página de Registro de Cambios (<a
+                        href="changelog.html"
+                        class="ulink"
+                        >changelog.html</a
+                      >):</strong
+                    >
+                    Nuevo portal con línea de tiempo interactiva, buscador
+                    instantáneo por palabras clave, filtro por etiquetas y
+                    exportación del registro a Markdown.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Mapa del sitio visual interactivo (<a
+                        href="sitemap.html"
+                        class="ulink"
+                        >sitemap.html</a
+                      >):</strong
+                    >
+                    Árbol jerárquico con carpetas colapsables, tarjetas
+                    informativas con badges de prioridad y modo dual
+                    <strong>🌳 Árbol</strong> /
+                    <strong>💻 Consola ASCII</strong> con sincronización
+                    automática en segundo plano con <code>sitemap.xml</code>.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong>Controles contextuales en sitemap:</strong> El
+                    buscador en vivo y los filtros de sección se agrupan en
+                    <code>#tree-controls</code> para mostrarse exclusivamente en
+                    la vista de Árbol visual y ocultarse automáticamente al
+                    entrar al modo Consola terminal.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="a11y">
+                  <span class="changelog-item-tag a11y mono"
+                    >♿ Accesibilidad</span
+                  >
+                  <div class="changelog-item-content">
+                    <strong
+                      >Auditoría de contraste en Modo Oscuro (WCAG AA):</strong
+                    >
+                    Se aumentó el contraste de los conectores de ramas del árbol
+                    (35% opacidad), divisores y puntos del recibo
+                    neo-brutalista, y se garantizó texto oscuro legible
+                    (<code>#181a20</code>) sobre etiquetas e insignias doradas.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="fix">
+                  <span class="changelog-item-tag fix mono">🐛 Corrección</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Normalización de botones claros en Dark Mode:</strong
+                    >
+                    Compatibilidad universal de dark mode para botones
+                    <code>&lt;button&gt;</code> y enlaces con fondos claros en
+                    línea, adaptándolos a superficies oscuras con texto legible.
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <!-- ================= v1.0.4 ================= -->
+            <article class="changelog-version" id="v1.0.4" data-version="1.0.4">
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.0.4</span>
+                  <span class="changelog-date mono"
+                    >📅 22 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Recibo de transparencia · Dado aleatorio
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Incorporación de la tarjeta física de transparencia "Recibo de
+                lo que no te cobramos" y el botón interactivo con dado
+                "Sorpréndeme".
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Recibo de lo que no te cobramos:</strong> Tarjeta
+                    física en la página de inicio que simula un ticket de compra
+                    con borde de dientes de sierra (sawtooth), punteado y sello
+                    verde de garantía. Desglosa con honestidad: Anuncios (0,00
+                    €), Compras in-app (0,00 €), Datos personales (0 bytes),
+                    Permisos (0) = <strong>TOTAL A PAGAR: 0,00 €</strong>.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Botón "🎲 Sorpréndeme":</strong> Pulsador
+                    interactivo junto al catálogo que lanza un dado aleatorio,
+                    selecciona uno de los 8 juegos al azar y redirige al
+                    instante a su ficha técnica.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong>Microinteracciones:</strong> Desplazamientos
+                    táctiles con <code>translate(2px, 2px)</code> al pasar el
+                    cursor o pulsar botones, sombras duras sin desenfoque y
+                    fondos con tramas de puntos vectoriales.
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <!-- ================= v1.0.3 ================= -->
+            <article class="changelog-version" id="v1.0.3" data-version="1.0.3">
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.0.3</span>
+                  <span class="changelog-date mono"
+                    >📅 22 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Versionado en pie · Web Share móvil · Responsive
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Ajustes para dispositivos móviles, versión visible en footer y
+                corrección de compatibilidad en la API de compartir.
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Insignia de versión en el pie de página:</strong>
+                    Implementación del identificador de versión oficial en todos
+                    los pies de página del sitio para mayor transparencia en
+                    despliegues.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="fix">
+                  <span class="changelog-item-tag fix mono">🐛 Corrección</span>
+                  <div class="changelog-item-content">
+                    <strong>Botón "📤 Compartir" optimizado para móvil:</strong>
+                    Detección estricta del soporte nativo de la API
+                    <code>navigator.share</code>, ocultando el botón en
+                    navegadores de escritorio para evitar alertas de error.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="mobile">
+                  <span class="changelog-item-tag mobile mono">📱 Móvil</span>
+                  <div class="changelog-item-content">
+                    <strong>Ajustes de diseño responsive:</strong>
+                    Refactorización de tamaños de fuente, paddings interiores y
+                    cuadrículas adaptativas en pantallas de smartphones para
+                    evitar desbordamientos horizontales.
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <!-- ================= v1.0.2 ================= -->
+            <article class="changelog-version" id="v1.0.2" data-version="1.0.2">
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.0.2</span>
+                  <span class="changelog-date mono"
+                    >📅 21 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Página 404 · PWA Manifest · SEO técnico
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Infraestructura técnica para indexación en buscadores, soporte
+                de instalación como Progressive Web App y página de error 404
+                personalizada.
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Página de error 404 personalizada (<a
+                        href="404.html"
+                        class="ulink"
+                        >404.html</a
+                      >):</strong
+                    >
+                    Pantalla de enlace roto con diseño consistente, botón de
+                    regreso directo al catálogo y compatibilidad con el
+                    conmutador de tema claro/oscuro.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="perf">
+                  <span class="changelog-item-tag perf mono"
+                    >⚡ Rendimiento</span
+                  >
+                  <div class="changelog-item-content">
+                    <strong>Configuración PWA y Web App Manifest:</strong>
+                    Creación de <code>manifest.json</code> con metadatos de
+                    aplicación, iconos SVG vectoriales e imágenes táctiles para
+                    instalación en pantalla de inicio.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Protocolo de indexación SEO:</strong> Publicación de
+                    <code>robots.txt</code> canónico y generación de
+                    <code>sitemap.xml</code> estándar con prioridades y
+                    frecuencias de actualización estructuradas.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong>Tarjetas Open Graph para redes sociales:</strong>
+                    Metatags enriquecidos para previsualizaciones impecables al
+                    compartir enlaces en WhatsApp, Telegram, Twitter/X y
+                    LinkedIn.
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <!-- ================= v1.0.1 ================= -->
+            <article class="changelog-version" id="v1.0.1" data-version="1.0.1">
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.0.1</span>
+                  <span class="changelog-date mono"
+                    >📅 21 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Modo Oscuro persistente · Sticky Blur Nav · 8 Páginas de
+                  juegos
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Llegada del conmutador de Modo Oscuro con memoria local, barra
+                de navegación superior con desenfoque dinámico y 8 fichas
+                individuales con galería de capturas.
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Modo Oscuro global persistente:</strong> Botón ☀️/🌙
+                    en la cabecera que conmuta entre temas de alto contraste,
+                    memoriza la preferencia en <code>localStorage</code> y
+                    respeta la configuración
+                    <code>prefers-color-scheme</code> del dispositivo.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong>Sticky Navigation con Glassmorphism:</strong> Barra
+                    superior que se fija al hacer scroll con efecto de
+                    desenfoque de fondo (<code>backdrop-filter: blur(14px)</code
+                    >) para no interferir con la lectura.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >8 Fichas completas de juegos en
+                      <code>/juegos/</code>:</strong
+                    >
+                    Páginas dedicadas para <em>Memory</em>, <em>Trivial</em>,
+                    <em>Simon</em>, <em>Piedra · Papel · Tijera</em>,
+                    <em>EmojiCrush</em>, <em>Mastermind</em>, <em>Words</em> y
+                    <em>Finder</em> con capturas de pantalla reales, información
+                    PEGI 3+ y enlaces directos a Google Play.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Animaciones de desplazamiento (Scroll Reveal):</strong
+                    >
+                    Aparición suave y escalonada de las secciones mediante
+                    clases <code>reveal</code> al avanzar por la página.
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <!-- ================= v1.0.0 ================= -->
+            <article class="changelog-version" id="v1.0.0" data-version="1.0.0">
+              <span class="changelog-node-pin" aria-hidden="true"></span>
+              <header class="changelog-vhead">
+                <div class="changelog-vtitle">
+                  <span class="changelog-vtag mono">v1.0.0</span>
+                  <span class="changelog-vbadge mono">LANZAMIENTO INICIAL</span>
+                  <span class="changelog-date mono"
+                    >📅 21 de Noviembre, 2026</span
+                  >
+                </div>
+                <div
+                  class="mono"
+                  style="font-size: 0.8rem; color: var(--muted)"
+                >
+                  Lanzamiento oficial de HTZ APPs
+                </div>
+              </header>
+              <p class="changelog-vlead">
+                Lanzamiento del sitio web oficial de HTZ APPs.
+              </p>
+              <ul class="changelog-items">
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Sitio web oficial de HTZ APPs:</strong> Arquitectura
+                    estática ultra rápida, sin scripts pesados de analítica
+                    invasiva y optimizada para carga inmediata.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="ui">
+                  <span class="changelog-item-tag ui mono">🎨 Diseño & UI</span>
+                  <div class="changelog-item-content">
+                    <strong>Identidad:</strong> Tipografía Montserrat, bordes
+                    negros de 2px, esquinas sin redondeo artificial, sombras
+                    duras sólidas de 4px y paleta cromática vibrante de alto
+                    contraste.
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong>Catálogo interactivo con filtrado:</strong>
+                    Explorador de juegos con filtros instantáneos por categorías
+                    (Todos, Memoria y lógica, Cultura general, Partidas rápidas
+                    y Palabras).
+                  </div>
+                </li>
+                <li class="changelog-item" data-type="feat">
+                  <span class="changelog-item-tag feat mono">✨ Función</span>
+                  <div class="changelog-item-content">
+                    <strong
+                      >Manifiesto de filosofía y Preguntas Frecuentes
+                      (FAQ):</strong
+                    >
+                    Declaración de principios éticos (sin micropagos, sin
+                    anuncios molestos, sin rastreo) y sección de respuestas
+                    desplegables con elementos nativos
+                    <code>&lt;details&gt;</code>.
+                  </div>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Mensaje de estado vacío (cuando ningún cambio coincide con la búsqueda o filtro) -->
+          <div id="changelog-empty" class="changelog-empty" hidden>
+            <p style="font-size: 2rem; margin-bottom: 0.5rem">🔍</p>
+            <h3>No se encontraron cambios</h3>
+            <p class="mono" style="color: var(--muted)">
+              Prueba con otra palabra clave o deselecciona los filtros para ver
+              el historial completo.
+            </p>
+            <button
+              id="btn-reset-filters"
+              class="btn btn-sm"
+              style="margin-top: 1rem"
+              type="button"
+            >
+              Restablecer filtros
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div class="container foot-inner">
+        <div><strong>HTZ APPs</strong></div>
+        <nav class="mono">
+          <a
+            href="https://play.google.com/store/apps/developer?id=HTZ+APPs"
+            target="_blank"
+            rel="noopener"
+            >Google Play ↗</a
+          >
+          <a href="sitemap.html">Mapa web</a>
+          <a href="changelog.html">Registro de cambios</a>
+        </nav>
+        <small class="mono">
+          © <span id="year"></span> HTZ APPs ·
+          <a
+            href="changelog.html"
+            class="foot-version"
+            title="Ver registro de cambios"
+            >v1.1.0</a
+          >
+          · Made with 💙
+        </small>
+      </div>
+    </footer>
+
+    <script>
+      // --- Búsqueda y filtrado interactivo ---
+      const searchInput = document.getElementById("changelog-search");
+      const filterChips = document.querySelectorAll(".changelog-filters .chip");
+      const versionArticles = document.querySelectorAll(".changelog-version");
+      const emptyState = document.getElementById("changelog-empty");
+      const resetBtn = document.getElementById("btn-reset-filters");
+
+      let currentFilter = "all";
+      let currentSearch = "";
+
+      function applyFilters() {
+        let totalVisibleItems = 0;
+
+        versionArticles.forEach((version) => {
+          const items = version.querySelectorAll(".changelog-item");
+          let visibleInVersion = 0;
+
+          items.forEach((item) => {
+            const itemType = item.dataset.type;
+            const text = (item.textContent || "").toLowerCase();
+
+            const matchesType =
+              currentFilter === "all" || itemType === currentFilter;
+            const matchesSearch =
+              !currentSearch || text.includes(currentSearch);
+
+            if (matchesType && matchesSearch) {
+              item.style.display = "";
+              visibleInVersion++;
+              totalVisibleItems++;
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          // Si una versión no tiene ningún cambio visible que coincida, se oculta la tarjeta
+          version.style.display = visibleInVersion > 0 ? "" : "none";
+        });
+
+        emptyState.hidden = totalVisibleItems > 0;
+      }
+
+      searchInput.addEventListener("input", (e) => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        applyFilters();
+      });
+
+      filterChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          filterChips.forEach((c) =>
+            c.setAttribute("aria-pressed", c === chip)
+          );
+          currentFilter = chip.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      resetBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        currentSearch = "";
+        currentFilter = "all";
+        filterChips.forEach((c) =>
+          c.setAttribute("aria-pressed", c.dataset.filter === "all")
+        );
+        applyFilters();
+      });
+
+      // --- Copiar resumen en formato Markdown ---
+      document
+        .getElementById("btn-copy-changelog")
+        .addEventListener("click", async function () {
+          const markdown = `# Historial de Cambios — HTZ APPs
+
+## [v1.1.0] - 2026-11-22
+- **✨ Función:** Página de Registro de Cambios (\`changelog.html\`) con timeline interactivo y filtros.
+- **✨ Función:** Mapa del sitio visual (\`sitemap.html\`) con modos Árbol y Consola ASCII y sincronización XML.
+- **🎨 Diseño:** Controles contextuales en sitemap (visibles solo en modo Árbol).
+- **♿ Accesibilidad:** Auditoría de contraste en modo oscuro (WCAG AA) para conectores, recibo y badges dorados.
+- **🐛 Corrección:** Normalización de botones con fondos claros en modo oscuro.
+
+## [v1.0.4] - 2026-11-22
+- **✨ Función:** Tarjeta física "Recibo de lo que no te cobramos" (0€ ads, 0€ in-app, 0 bytes datos).
+- **✨ Función:** Botón "🎲 Sorpréndeme" con dado aleatorio para acceder a un juego al azar.
+- **🎨 Diseño:** Efectos con sombras duras de 4px y patrones vectoriales.
+
+## [v1.0.3] - 2026-11-22
+- **✨ Función:** Insignia de versión visible en el pie de página de todas las páginas del sitio.
+- **🐛 Corrección:** Botón "📤 Compartir" restringido exclusivamente a móviles con soporte nativo Web Share API.
+- **📱 Móvil:** Mejoras de adaptación responsive en teléfonos móviles.
+
+## [v1.0.2] - 2026-11-21
+- **✨ Función:** Página personalizada 404 (\`404.html\`) con retorno rápido al catálogo.
+- **⚡ Rendimiento:** Soporte Progressive Web App (\`manifest.json\`, iconos SVG/PNG y theme-color).
+- **✨ Función:** SEO técnico con \`robots.txt\` y \`sitemap.xml\`.
+- **🎨 Diseño:** Tarjetas Open Graph para redes sociales.
+
+## [v1.0.1] - 2026-11-21
+- **✨ Función:** Modo Oscuro global con persistencia en localStorage y detección de preferencia del sistema.
+- **🎨 Diseño:** Barra de navegación superior fija con desenfoque translúcido (\`backdrop-filter: blur\`).
+- **✨ Función:** 8 páginas dedicadas de juegos en \`/juegos/\` con galerías de capturas y enlaces a Google Play.
+- **🎨 Diseño:** Animaciones de aparición al hacer scroll (\`reveal\`).
+
+## [v1.0.0] - 2026-11-21
+- **✨ Función:** Lanzamiento oficial del portal web de HTZ APPs.
+- **🎨 Diseño:** Identidad estética Neo-brutalista con bordes negros sólidos y colores vivos.
+- **✨ Función:** Catálogo interactivo de 8 juegos casuales con filtros por categoría.
+- **✨ Función:** Manifiesto de valores de desarrollo honesto (sin anuncios invasivos, 100% offline).
+`;
+          try {
+            await navigator.clipboard.writeText(markdown);
+            const orig = this.textContent;
+            this.textContent = "✓ ¡Resumen copiado!";
+            setTimeout(() => {
+              this.textContent = orig;
+            }, 2000);
+          } catch (e) {
+            alert("Resumen copiado al portapapeles");
+          }
+        });
+
+      // --- Año dinámico en footer ---
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // --- Modo Oscuro global ---
+      (function () {
+        const root = document.documentElement;
+        const btn = document.getElementById("dark-toggle");
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme:dark)"
+        ).matches;
+        const apply = (t) => {
+          root.setAttribute("data-theme", t);
+          if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙";
+          localStorage.setItem("theme", t);
+        };
+        apply(saved || (prefersDark ? "dark" : "light"));
+        if (btn)
+          btn.addEventListener("click", () => {
+            apply(
+              root.getAttribute("data-theme") === "dark" ? "light" : "dark"
+            );
+          });
+      })();
+
+      // --- Sticky Nav Blur al hacer scroll ---
+      (function () {
+        const nav = document.querySelector(".nav");
+        if (!nav) return;
+        const onScroll = () =>
+          nav.classList.toggle("scrolled", window.scrollY > 10);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      })();
+    </script>
+  </body>
+</html>
