@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa del sitio web (Sitemap) | HTZ APPs</title>
+<meta name="description" content="Estructura completa de páginas y juegos clásicos de HTZ APPs en un árbol visual interactivo generado a partir de sitemap.xml.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://htz-apps.github.io/sitemap.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f2f58" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="arriba">
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><strong>HTZ APPs</strong></a>
+    <nav class="links mono">
+      <a href="index.html#catalogo">Catálogo</a>
+      <a href="index.html#valores">Filosofía</a>
+      <a href="index.html#sobre">Sobre nosotros</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn-sm" href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Google Play ↗</a>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="sitemap-header">
+    <div class="container">
+      <p class="crumbs mono">
+        <a href="index.html">Inicio</a> / Mapa del sitio
+      </p>
+      <p class="eyebrow mono">Estructura web · sitemap.xml</p>
+      <h1>Mapa del sitio</h1>
+      <p class="lead">Explora la jerarquía completa de HTZ APPs visualizada en forma de árbol interactivo. Los datos están sincronizados en tiempo real con el archivo oficial <code>sitemap.xml</code>.</p>
+
+      <div class="sitemap-actions">
+        <a class="btn btn-sm" href="sitemap.xml" target="_blank" rel="noopener">📄 Ver sitemap.xml crudo ↗</a>
+        <button id="btn-copy-urls" class="btn btn-sm" style="background:#fff;color:var(--ink)" type="button">📋 Copiar todas las URLs</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:2rem">
+    <div class="container">
+      <!-- Barra de herramientas: Selector de vista y Buscador -->
+      <div class="tree-toolbar">
+        <div class="view-switcher mono" role="tablist" aria-label="Modo de visualización">
+          <button class="view-btn active" id="tab-visual" role="tab" aria-selected="true" type="button">
+            🌳 Árbol
+          </button>
+          <button class="view-btn" id="tab-terminal" role="tab" aria-selected="false" type="button">
+            💻 Consola
+          </button>
+        </div>
+
+        <div id="tree-controls" class="tree-controls-group">
+          <div class="tree-search-wrap">
+            <span class="tree-search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="tree-search" class="tree-search" placeholder="Buscar página o juego..." aria-label="Filtrar páginas del sitemap">
+          </div>
+
+          <div class="tree-filter-chips" role="group" aria-label="Filtrar por sección">
+            <button class="chip mono" data-filter="all" aria-pressed="true">Todas (11)</button>
+            <button class="chip mono" data-filter="games" aria-pressed="false">Juegos (8)</button>
+            <button class="chip mono" data-filter="main" aria-pressed="false">Páginas (3)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor del Árbol Visual (Renderizado inmediatamente) -->
+      <div id="visual-view">
+        <!-- Nodo Raíz -->
+        <div class="tree-card-root">
+          <div>
+            <strong>🌐 https://htz-apps.github.io/</strong>
+            <small class="mono">Dominio principal · Protocolo seguro HTTPS</small>
+          </div>
+          <span class="badge badge-gold mono">Prioridad 1.0 · Semanal</span>
+        </div>
+
+        <!-- Rama 1: Páginas generales -->
+        <div class="tree-branch-group" data-group="main">
+          <div class="tree-folder mono" data-target="branch-main">
+            <span class="tree-folder-title">📁 /</span>
+            <span class="tree-folder-arrow">▼</span>
+          </div>
+          <ul class="tree-list" id="branch-main">
+            <li class="tree-item" data-type="main" data-title="Inicio Home HTZ APPs">
+              <a href="index.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon">🏠</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Inicio (Home)</strong>
+                      <span class="tree-card-path mono">/index.html</span>
+                    </div>
+                    <div class="tree-card-sub">Página principal con el catálogo de juegos, filosofía de desarrollo y preguntas frecuentes.</div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 1.0</span>
+                      <span class="tree-tag">weekly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Visitar ↗</span>
+              </a>
+            </li>
+            <li class="tree-item" data-type="main" data-title="Mapa del sitio Sitemap web">
+              <a href="sitemap.html" class="tree-card" style="border-left-width:5px;border-left-color:var(--gold)">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon">🗺️</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Mapa del sitio (Sitemap)</strong>
+                      <span class="tree-card-path mono">/sitemap.html</span>
+                    </div>
+                    <div class="tree-card-sub">Árbol visual interactivo con la jerarquía completa y páginas del sitio.</div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Estás aquí 📍</span>
+                      <span class="tree-tag">weekly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn" style="background:var(--gold);color:#181a20;border-color:var(--gold)">Actual</span>
+              </a>
+            </li>
+            <li class="tree-item" data-type="main" data-title="Página no encontrada 404">
+              <a href="404.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon">🚫</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>404 — Página no encontrada</strong>
+                      <span class="tree-card-path mono">/404.html</span>
+                    </div>
+                    <div class="tree-card-sub">Página de error personalizada para enlaces rotos o inexistentes.</div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag">Error handler</span>
+                      <span class="tree-tag">noindex</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Visitar ↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Rama 2: Catálogo de Juegos -->
+        <div class="tree-branch-group" data-group="games">
+          <div class="tree-folder mono" data-target="branch-games">
+            <span class="tree-folder-title">📁 /juegos/</span>
+            <span class="tree-folder-arrow">▼</span>
+          </div>
+          <ul class="tree-list" id="branch-games">
+            <li class="tree-item" data-type="games" data-title="Memory Juego de parejas Memoria y lógica Puzzle">
+              <a href="juegos/memory.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Puzzle">🃏</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Memory</strong>
+                      <span class="tree-card-path mono">/juegos/memory.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de parejas · Categoría: <strong>Memoria y lógica</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Trivial Juego de preguntas Cultura general Quiz">
+              <a href="juegos/trivial.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Cultura general">❓</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Trivial</strong>
+                      <span class="tree-card-path mono">/juegos/trivial.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de preguntas · Categoría: <strong>Cultura general</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Simon Juego de memoria Memoria y lógica Secuencia">
+              <a href="juegos/simon.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Memoria y lógica">🧩</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Simon</strong>
+                      <span class="tree-card-path mono">/juegos/simon.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de memoria · Categoría: <strong>Memoria y lógica</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Piedra Papel Tijera Clásico de siempre Partidas rápidas Arcade">
+              <a href="juegos/piedra-papel-tijera.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Partidas rápidas">🪨</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Piedra · Papel · Tijera</strong>
+                      <span class="tree-card-path mono">/juegos/piedra-papel-tijera.html</span>
+                    </div>
+                    <div class="tree-card-sub">Clásico de siempre · Categoría: <strong>Partidas rápidas</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="EmojiCrush Juego de bloques Partidas rápidas Puzzle">
+              <a href="juegos/emojicrush.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Partidas rápidas">🍭</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>EmojiCrush</strong>
+                      <span class="tree-card-path mono">/juegos/emojicrush.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de bloques · Categoría: <strong>Partidas rápidas</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Mastermind Juego de colores Memoria y lógica">
+              <a href="juegos/mastermind.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Memoria y lógica">🎯</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Mastermind</strong>
+                      <span class="tree-card-path mono">/juegos/mastermind.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de colores · Categoría: <strong>Memoria y lógica</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Words Juego de palabras Palabras Vocabulario">
+              <a href="juegos/words.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Palabras">🔠</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Words</strong>
+                      <span class="tree-card-path mono">/juegos/words.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de palabras · Categoría: <strong>Palabras</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+
+            <li class="tree-item" data-type="games" data-title="Finder Juego de letras Palabras Búsqueda">
+              <a href="juegos/finder.html" class="tree-card">
+                <div class="tree-card-main">
+                  <div class="tree-card-icon" title="Palabras">🔍</div>
+                  <div class="tree-card-text">
+                    <div class="tree-card-title">
+                      <strong>Finder</strong>
+                      <span class="tree-card-path mono">/juegos/finder.html</span>
+                    </div>
+                    <div class="tree-card-sub">Juego de letras · Categoría: <strong>Palabras</strong></div>
+                    <div class="tree-badges mono">
+                      <span class="tree-tag pri">Prioridad 0.8</span>
+                      <span class="tree-tag">monthly</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="btn btn-sm tree-card-btn">Ver ficha ↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contenedor Vista Terminal / Consola -->
+      <div id="terminal-view" class="terminal-card" hidden>
+        <div class="terminal-bar mono">
+          <div class="terminal-dots">
+            <span class="tdot tdot-red"></span>
+            <span class="tdot tdot-yellow"></span>
+            <span class="tdot tdot-green"></span>
+          </div>
+          <span class="terminal-title">htz-apps.github.io — tree / sitemap.xml</span>
+          <button id="btn-copy-ascii" class="btn btn-sm mono" style="padding:.3rem .7rem;font-size:.72rem" type="button">📋 Copiar árbol</button>
+        </div>
+        <pre class="terminal-pre"><code id="terminal-code"><span class="t-root">htz-apps.github.io/</span> (Dominio oficial)
+├── <span class="t-file">sitemap.xml</span> <span class="t-meta">[1.0 · XML Sitemap Protocol]</span>
+├── <span class="t-file">index.html</span> <span class="t-meta">[1.0 · weekly]</span> <span class="t-sub">(Inicio / Catálogo / Filosofía / FAQ)</span>
+├── <span class="t-file">sitemap.html</span> <span class="t-meta">[0.7 · weekly]</span> <span class="t-sub">(Mapa web interactivo)</span>
+├── <span class="t-file">404.html</span> <span class="t-meta">[Manejador de páginas no encontradas]</span>
+└── <span class="t-dir">juegos/
+    ├── <span class="t-file">memory.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🃏 Memory (Juego de parejas)</span>
+    ├── <span class="t-file">trivial.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">❓ Trivial (Juego de preguntas)</span>
+    ├── <span class="t-file">simon.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🧩 Simon (Juego de memoria)</span>
+    ├── <span class="t-file">piedra-papel-tijera.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🪨 Piedra · Papel · Tijera</span>
+    ├── <span class="t-file">emojicrush.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🍭 EmojiCrush (Juego de bloques)</span>
+    ├── <span class="t-file">mastermind.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🎯 Mastermind (Juego de colores)</span>
+    ├── <span class="t-file">words.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🔠 Words (Juego de palabras)</span>
+    └── <span class="t-file">finder.html</span> <span class="t-meta">[0.8 · monthly]</span> <span class="t-sub">🔍 Finder (Juego de letras)</span></code></pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container foot-inner">
+    <div><strong>HTZ APPs</strong></div>
+    <nav class="mono">
+      <a href="https://play.google.com/store/apps/developer?id=HTZ+APPs" target="_blank" rel="noopener">Google Play ↗</a>
+      <a href="sitemap.html">Mapa web</a>
+    </nav>
+    <small class="mono">© <span id="year"></span> HTZ APPs · <span class="foot-version">v1.0.4</span> · Made with 💙</small>
+  </div>
+</footer>
+
+<script>
+// Lista de URLs iniciales
+let parsedUrls = [
+  { loc: "https://htz-apps.github.io/", changefreq: "weekly", priority: "1.0" },
+  { loc: "https://htz-apps.github.io/sitemap.html", changefreq: "weekly", priority: "0.7" },
+  { loc: "https://htz-apps.github.io/juegos/memory.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/trivial.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/simon.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/piedra-papel-tijera.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/emojicrush.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/mastermind.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/words.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://htz-apps.github.io/juegos/finder.html", changefreq: "monthly", priority: "0.8" }
+];
+
+// Sincronización en segundo plano con sitemap.xml
+async function syncWithSitemapXml() {
+  try {
+    const res = await fetch('sitemap.xml');
+    if (!res.ok) return;
+    const text = await res.text();
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(text, 'text/xml');
+    const nodes = Array.from(xmlDoc.querySelectorAll('url'));
+    if (nodes.length) {
+      parsedUrls = nodes.map(n => ({
+        loc: n.querySelector('loc')?.textContent.trim() || '',
+        lastmod: n.querySelector('lastmod')?.textContent.trim() || '',
+        changefreq: n.querySelector('changefreq')?.textContent.trim() || '',
+        priority: n.querySelector('priority')?.textContent.trim() || '0.5'
+      }));
+      document.getElementById('stat-urls').textContent = `${parsedUrls.length} URLs indexadas`;
+    }
+  } catch(e) {
+    // Si fetch falla (por ejemplo file://), se utiliza la lista inicial predefinida
+  }
+}
+
+// --- Toggle de carpetas (expandir/colapsar ramas) ---
+document.querySelectorAll('.tree-folder').forEach(folder => {
+  folder.addEventListener('click', () => {
+    const targetId = folder.dataset.target;
+    const list = document.getElementById(targetId);
+    if (!list) return;
+    const isHidden = list.style.display === 'none';
+    list.style.display = isHidden ? 'block' : 'none';
+    folder.classList.toggle('collapsed', !isHidden);
+  });
+});
+
+// --- Pestañas: Visual vs Terminal ---
+const tabVisual = document.getElementById('tab-visual');
+const tabTerminal = document.getElementById('tab-terminal');
+const visualView = document.getElementById('visual-view');
+const terminalView = document.getElementById('terminal-view');
+const treeControls = document.getElementById('tree-controls');
+
+tabVisual.addEventListener('click', () => {
+  tabVisual.classList.add('active');
+  tabVisual.setAttribute('aria-selected', 'true');
+  tabTerminal.classList.remove('active');
+  tabTerminal.setAttribute('aria-selected', 'false');
+  visualView.hidden = false;
+  terminalView.hidden = true;
+  if (treeControls) treeControls.hidden = false;
+});
+
+tabTerminal.addEventListener('click', () => {
+  tabTerminal.classList.add('active');
+  tabTerminal.setAttribute('aria-selected', 'true');
+  tabVisual.classList.remove('active');
+  tabVisual.setAttribute('aria-selected', 'false');
+  visualView.hidden = true;
+  terminalView.hidden = false;
+  if (treeControls) treeControls.hidden = true;
+});
+
+// --- Búsqueda y filtrado en tiempo real ---
+const searchInput = document.getElementById('tree-search');
+searchInput.addEventListener('input', e => {
+  const query = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.tree-item').forEach(item => {
+    const text = (item.dataset.title + ' ' + item.textContent).toLowerCase();
+    const matches = !query || text.includes(query);
+    item.style.display = matches ? '' : 'none';
+  });
+});
+
+// --- Chips de filtro rápido ---
+document.querySelectorAll('.tree-filter-chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.tree-filter-chips .chip').forEach(c => c.setAttribute('aria-pressed', c === chip));
+    const filter = chip.dataset.filter;
+    document.querySelectorAll('.tree-branch-group').forEach(group => {
+      const gType = group.dataset.group;
+      const show = filter === 'all' || filter === gType;
+      group.style.display = show ? '' : 'none';
+    });
+  });
+});
+
+// --- Copiar lista de URLs ---
+document.getElementById('btn-copy-urls').addEventListener('click', async function() {
+  const list = parsedUrls.map(u => u.loc).join('\n');
+  try {
+    await navigator.clipboard.writeText(list);
+    const orig = this.textContent;
+    this.textContent = '✓ ¡URLs copiadas!';
+    setTimeout(() => { this.textContent = orig; }, 2000);
+  } catch(e) {
+    alert('URLs:\n' + list);
+  }
+});
+
+// --- Copiar árbol ASCII ---
+document.getElementById('btn-copy-ascii').addEventListener('click', async function() {
+  const text = document.getElementById('terminal-code').innerText;
+  try {
+    await navigator.clipboard.writeText(text);
+    const orig = this.textContent;
+    this.textContent = '✓ ¡Árbol copiado!';
+    setTimeout(() => { this.textContent = orig; }, 2000);
+  } catch(e) {
+    alert('Árbol:\n' + text);
+  }
+});
+
+// --- Año en footer ---
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- Modo oscuro ---
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('dark-toggle');
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const apply = t => {
+    root.setAttribute('data-theme', t);
+    if(btn) btn.textContent = t==='dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', t);
+  };
+  apply(saved || (prefersDark ? 'dark' : 'light'));
+  if(btn) btn.addEventListener('click', () => {
+    apply(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+  });
+})();
+
+// --- Sticky nav blur ---
+(function(){
+  const nav = document.querySelector('.nav');
+  if(!nav) return;
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// Sincronizar en segundo plano
+syncWithSitemapXml();
+</script>
+</body>
+</html>

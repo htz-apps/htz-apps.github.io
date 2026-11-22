@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://htzapps.es/</loc>
+    <loc>https://htz-apps.github.io/</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/memory.html</loc>
+    <loc>https://htz-apps.github.io/sitemap.html</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://htz-apps.github.io/juegos/memory.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/trivial.html</loc>
+    <loc>https://htz-apps.github.io/juegos/trivial.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/simon.html</loc>
+    <loc>https://htz-apps.github.io/juegos/simon.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/piedra-papel-tijera.html</loc>
+    <loc>https://htz-apps.github.io/juegos/piedra-papel-tijera.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/emojicrush.html</loc>
+    <loc>https://htz-apps.github.io/juegos/emojicrush.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/mastermind.html</loc>
+    <loc>https://htz-apps.github.io/juegos/mastermind.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/words.html</loc>
+    <loc>https://htz-apps.github.io/juegos/words.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htzapps.es/juegos/finder.html</loc>
+    <loc>https://htz-apps.github.io/juegos/finder.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
